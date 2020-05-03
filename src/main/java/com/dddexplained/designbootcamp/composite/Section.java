@@ -1,6 +1,6 @@
 package com.dddexplained.designbootcamp.composite;
 
-public class Section extends QuestionElement {
+public class Section extends CompositeQuestionElement {
     private String name;
 
     public Section(String name) {
@@ -8,30 +8,17 @@ public class Section extends QuestionElement {
     }
 
     @Override
-    public String generate() {
-        StringBuffer sb = new StringBuffer();
-        appendBeginInfo(sb);
-        appendChildren(sb);
-        appendCurrentElement(sb);
-        appendEndInfo(sb);
-        return sb.toString();
+    protected void appendBeginInfo(StringBuffer sb) {
+        sb.append("Section Begin:");
     }
 
-    private void appendChildren(StringBuffer sb) {
-        for (QuestionElement element : elements) {
-            sb.append(element.generate());
-        }
-    }
-
-    private void appendCurrentElement(StringBuffer sb) {
+    @Override
+    protected void appendCurrent(StringBuffer sb) {
         sb.append("Section is " + name);
     }
 
-    private void appendEndInfo(StringBuffer sb) {
+    @Override
+    protected void appendEndInfo(StringBuffer sb) {
         sb.append("Section End.");
-    }
-
-    private StringBuffer appendBeginInfo(StringBuffer sb) {
-        return sb.append("Section Begin:");
     }
 }
