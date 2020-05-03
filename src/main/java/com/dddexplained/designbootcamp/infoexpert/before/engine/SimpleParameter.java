@@ -1,6 +1,7 @@
-package com.dddexplained.designbootcamp.infoexpert.engine;
+package com.dddexplained.designbootcamp.infoexpert.before.engine;
 
-public class SimpleParameter implements Parameter{
+
+public class SimpleParameter implements Parameter {
 
     private Object[] value;
 

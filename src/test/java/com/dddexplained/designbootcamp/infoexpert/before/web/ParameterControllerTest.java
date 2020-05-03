@@ -1,4 +1,4 @@
-package com.dddexplained.designbootcamp.infoexpert.web;
+package com.dddexplained.designbootcamp.infoexpert.before.web;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.dddexplained.designbootcamp.infoexpert.engine;
+package com.dddexplained.designbootcamp.infoexpert.before.engine;
 
 public class TableParameter implements Parameter {
     private String rowName;

@@ -1,4 +1,4 @@
-package com.dddexplained.designbootcamp.infoexpert.engine;
+package com.dddexplained.designbootcamp.infoexpert.after.engine;
 
 public class TableParameterElement {
     private String row;
