@@ -4,19 +4,20 @@ import org.junit.Test;
 
 public class UserTest {
     @Test
-    public void should_test() {
+    public void user_sign_in() {
         User user = new User();
         user.signIn();
+    }
 
-        System.out.println("--------");
-
+    @Test
+    public void user_sign_in_with_logging() {
         User logging = new LoggingDecorator(new User());
         logging.signIn();
+    }
 
-        System.out.println("--------");
-
-        LoggingDecorator logging1 = new LoggingDecorator(new Employee());
-        AuthorizedUser security = new AuthorizedUser(logging1);
+    @Test
+    public void employee_sign_in_with_logging_and_authorized() {
+        User security = new AuthorizedUser(new LoggingDecorator(new Employee()));
         security.signIn();
     }
 }
