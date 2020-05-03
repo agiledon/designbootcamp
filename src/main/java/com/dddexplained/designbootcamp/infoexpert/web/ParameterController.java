@@ -1,11 +1,12 @@
 package com.dddexplained.designbootcamp.infoexpert.web;
 
 import com.dddexplained.designbootcamp.infoexpert.engine.*;
-import com.dddexplained.designbootcamp.infoexpert.servlet.ServletHttpRequest;
+
+import javax.servlet.http.HttpServletRequest;
 
 public class ParameterController {
-    public void fillParameters(ServletHttpRequest request, ParameterGraph parameterGraph) {
-        for (Parameter para : parameterGraph.getParmaeters()) {
+    public void fillParameters(HttpServletRequest request, ParameterGraph parameterGraph) {
+        for (Parameter para : parameterGraph.getParameters()) {
             if (para instanceof SimpleParameter) {
                 SimpleParameter simplePara = (SimpleParameter) para;
                 String[] values = request.getParameterValues(simplePara.getName());
