@@ -10,8 +10,12 @@ public class LoggingDecorator extends User {
     }
 
     @Override
-    public void login() {
-        System.out.println(LocalDate.now());
-        this.user.login();
+    public void signIn() {
+        logging(LocalDate.now().toString());
+        this.user.signIn();
+    }
+
+    private void logging(String message) {
+        System.out.println(message);
     }
 }

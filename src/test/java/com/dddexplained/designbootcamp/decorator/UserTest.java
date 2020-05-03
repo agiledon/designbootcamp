@@ -6,17 +6,17 @@ public class UserTest {
     @Test
     public void should_test() {
         User user = new User();
-        user.login();
+        user.signIn();
 
         System.out.println("--------");
 
         User logging = new LoggingDecorator(new User());
-        logging.login();
+        logging.signIn();
 
         System.out.println("--------");
 
         LoggingDecorator logging1 = new LoggingDecorator(new Employee());
-        SecurityDecorator security = new SecurityDecorator(logging1);
-        security.login();
+        AuthorizedUser security = new AuthorizedUser(logging1);
+        security.signIn();
     }
 }
